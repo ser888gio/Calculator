@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src = "index.js"></script>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input id = "display" readonly>
+        <div class="keys">
+            <div class="first_column">
+                <button type = "button" onclick="clearDisplay()">Clear</button>
+                <button type = "button" class = "toArray operand" onclick="clicked(event)" value = "+">+</button>
+                <button type = "button" value ="7" class = "toArray" onclick="clicked(event)">7</button>
+                <button type = "button" value ="4" class = "toArray" onclick="clicked(event)">4</button>
+                <button type = "button" value ="1" class = "toArray" onclick="clicked(event)">1</button>
+                <button type = "button">,</button>
+            </div>
+            <div class="second_column">
+                <button type = "button" onclick="clearLast()">Clear Last</button>
+                <button type = "button" class = "toArray operand" value = "-">-</button>
+                <button type = "button" value ="8" class = "toArray" onclick="clicked(event)">8</button>
+                <button type = "button" value ="5" class = "toArray" onclick="clicked(event)">5</button>
+                <button type = "button" value ="2" class = "toArray" onclick="clicked(event)">2</button>
+                <button type = "button" value ="0" class = "toArray" onclick="clicked(event)">0</button>
+            </div>
+            <div class="third_row">
+                <button type = "button" class = "toArray operand" onclick="clicked(event)" value = "/">/</button>
+                <button type = "button" class = "toArray operand" onclick="clicked(event)" value = "*">*</button>
+                <button type = "button" value ="9" class = "toArray" onclick="clicked(event)">9</button>
+                <button type = "button" value ="6" class = "toArray" onclick="clicked(event)">6</button>
+                <button type = "button" value ="3" class = "toArray" onclick="clicked(event)">3</button>
+                <button type = "button" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
