@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <div class="calculator">
-        <input type = "text" id = "display" readonly>
+        <label for="display"><input type = "text" id = "display" readonly></label>
         <div class="keys">
             <div class="first_row">
                 <button type = "button" id = "clear" onclick="clearDisplay()">Clear</button>
@@ -22,18 +22,20 @@
                 <button type = "button" id = "8" value ="8" class = "toArray" onclick="clicked(event)">8</button>
                 <button type = "button" id = "9" value ="9" class = "toArray" onclick="clicked(event)">9</button>
                 <button type = "button" id = "*" class = "toArray operand" onclick="clicked(event)" value = "*">*</button>
+            </div>
             <div class="third_row">
                 <button type = "button" id = "4" value ="4" class = "toArray" onclick="clicked(event)">4</button>
                 <button type = "button" id = "5" value ="5" class = "toArray" onclick="clicked(event)">5</button>
                 <button type = "button" id = "6" value ="6" class = "toArray" onclick="clicked(event)">6</button>
                 <button type = "button" id = "+" class = "toArray operand" onclick="clicked(event)" value = "+">+</button>
             </div>
+            <div class = "forth_row">
                 <button type = "button" id = "1" value ="1" class = "toArray" onclick="clicked(event)">1</button>
                 <button type = "button" id = "2" value ="2" class = "toArray" onclick="clicked(event)">2</button>
                 <button type = "button" id = "3" value ="3" class = "toArray" onclick="clicked(event)">3</button>
                 <button type = "button" id = "-" class = "toArray operand" onclick="clicked(event)" value = "-">-</button>
             </div>
-            <div class="third_row">
+            <div class="fifth_row">
                 <button type = "button" id = "0" value ="0" class = "toArray" onclick="clicked(event)">0</button>
                 <button type = "button" id = "00" value ="00" class = "toArray" onclick="clicked(event)">00</button>
                 <button type = "button" id = "," value ="," class = "toArray" onclick="clicked(event)">,</button>

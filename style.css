@@ -52,6 +52,7 @@ button {
     height: 4rem; /* Adjust height as needed */
     width: 4rem; /* Adjust width as needed */
     cursor: pointer;
+    margin: 5px 10px;
 }
 
 /* Media queries for different screen sizes */
