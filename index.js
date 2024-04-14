@@ -37,10 +37,10 @@ const assert = (predicate) =>{
     throw new Error('Assertion failed due to invalid token')
 }
 
-const toRPN = (input) => {
+const evaluate = (input) => {
     const opSymbols = Object.keys(operators);
     const stack = []; //primarily for operators
-    let output = ''; //primarily for numbers
+    let output = []; //primarily for numbers
 
     //returns the last element in stack
 
@@ -48,15 +48,38 @@ const toRPN = (input) => {
         return stack.at(-1);
     };
 
-    //adds token to the output string
+    //adds token to the output array
     const addToOutput = (token) => {
-        output += ' ' + token;
+        output.push(token)
     };
 
     //removes the last element form stack
     const handlePop = () => {
-        return stack.pop();
-    }
+        const op = stack.pop();
+
+        //skips the left parenthesis
+        if (op === '(') return;
+
+        //get the 2 numbers of making operations
+        const right = parseFloat(output.pop());
+        const left = parseFloat(output.pop());
+
+        //what operations should be performed
+        switch (op){
+            case'+':
+                return left + right;
+            case'-':
+                return left - right;
+            case'*':
+                return left * right;
+            case'/':
+                return left / right;
+            case'^':
+                return left ** right;
+            default:
+                throw new Error(`Invalid operation ${op}`);
+        }
+    };
 
     //Pushes the token to the right category
     const handleToken = (token) => {
@@ -112,16 +135,18 @@ const toRPN = (input) => {
         handleToken(i);
     }
 
+    //calls handlePop function that evaluates the math operation. then is added to the output
     while (stack.length !== 0) {
         assert(lastElement() !== '(');
-        addToOutput(stack.pop());
+        addToOutput(handlePop());
     }
     debugger
-    return output;
+    return output[0];
 };
 
 function calculate() {
-    let result = toRPN(arrayCalculator)
+    let result = evaluate(arrayCalculator)
+    alert(result)
 }
 
 //clears the last digit from display, by removing the last element from arrayCalculator
@@ -140,7 +165,6 @@ function clearDisplay() {
 function updateDisplay(result) {
     if (result !== undefined) {
         document.getElementById('display').value = result;
-        console.log(calculate())
     } else {
         document.getElementById('display').value = arrayCalculator.join(' ');
     }
