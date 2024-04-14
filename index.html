@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Web app of a calculator. Can use diffrent operator.">
+    <meta name="viewport" content="width=device-width">
     <title>Calculator</title>
     <script src = "index.js"></script>
     <link rel = "stylesheet" href="style.css">
@@ -42,6 +44,11 @@
                 <button type = "button" id = "00" value ="00" class = "toArray" onclick="clicked(event)">00</button>
                 <button type = "button" id = "," value ="," class = "toArray" onclick="clicked(event)">,</button>
                 <button type = "button" id = "=" onclick="calculate()">=</button>
+            </div>
+            <div id="sixth_row" class="row">
+                <button type = "button" id = "(" value ="(" class = "toArray" onclick="clicked(event)">(</button>
+                <button type = "button" id = ")" value =")" class = "toArray" onclick="clicked(event)">)</button>
+                <button type = "button" id = "^" value = "^" class = "toArray" onclick="clicked(event)">^</button>
             </div>
         </div>
     </div>
