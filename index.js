@@ -146,7 +146,7 @@ const evaluate = (input) => {
 
 function calculate() {
     let result = evaluate(arrayCalculator)
-    alert(result)
+    updateDisplay(result)
 }
 
 //clears the last digit from display, by removing the last element from arrayCalculator
