@@ -31,7 +31,7 @@ const operators = {
     },
 };
 
-//checks if something is true
+//if it is false it throws the Error. When true does nothing
 const assert = (predicate) =>{
     if(predicate) return;
     throw new Error('Assertion failed due to invalid token')
@@ -43,7 +43,6 @@ const toRPN = (input) => {
     let output = ''; //primarily for numbers
 
     //returns the last element in stack
-
     const lastElement = () => {
         return stack.at(-1);
     };
@@ -140,7 +139,6 @@ function clearDisplay() {
 function updateDisplay(result) {
     if (result !== undefined) {
         document.getElementById('display').value = result;
-        console.log(calculate())
     } else {
         document.getElementById('display').value = arrayCalculator.join(' ');
     }
